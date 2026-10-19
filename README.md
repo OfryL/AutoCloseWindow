@@ -1,12 +1,10 @@
-<img width="1005" height="305" alt="image" src="https://gist.github.com/user-attachments/assets/2bdd7c14-db2a-4ba6-b6f7-7adaa01cb19d" />
-
-# Auto Close Window (autoTabCloser)
+# Auto Close Window
 
 A userscript that automatically closes browser windows/tabs when specific text patterns are detected on the page. Useful for OAuth callbacks, AWS SSO windows, and other temporary pages.
 
 ## Table of Contents
 
-- [Auto Close Window (autoTabCloser)](#auto-close-window-autotabcloser)
+- [Auto Close Window](#auto-close-window)
   - [Table of Contents](#table-of-contents)
   - [1. Features](#1-features)
   - [2. Installation](#2-installation)
@@ -31,9 +29,13 @@ A userscript that automatically closes browser windows/tabs when specific text p
 ## 2. Installation
 
 1. Install a userscript manager (Tampermonkey, Violentmonkey, or Safari Userscripts).
-2. Install `autoTabCloser.user.js` from this folder (open the raw file and let the manager pick it up, or paste it into a new script).
+2. Open the raw script and let the manager pick it up: [AutoCloseWindow.user.js](https://raw.githubusercontent.com/OfryL/AutoCloseWindow/main/AutoCloseWindow.user.js).
 3. Accept the requested permissions (storage, `GM_xmlhttpRequest` for gist sync, clipboard).
 4. Firefox only: set `dom.allow_scripts_to_close_windows` to `true` in `about:config`, otherwise `window.close()` is blocked.
+
+Updates are delivered automatically: the script's `@updateURL` points at the raw file on the `main` branch of this repository, so bumping `@version` here is all it takes to roll out a new release.
+
+If you installed an earlier version from the original gist, reinstall once from the link above so the manager picks up the new update URL.
 
 ## 3. Configuration
 
@@ -88,14 +90,18 @@ On a second browser/machine, repeat step 4 only (the Client ID travels with the 
 
 ## 6. License
 
-MIT — see the header of `autoTabCloser.user.js`.
+MIT — see [LICENSE](LICENSE) and the header of `AutoCloseWindow.user.js`.
 
 ## 7. Changelog
 
+### 2026-10-19
+
+- **Changed** (script v1.9): Moved from the gist to this repository; `@homepageURL`, `@updateURL`, `@downloadURL` and the self-`@exclude` rules now point at `OfryL/AutoCloseWindow`
+- **Added**: `@supportURL` (GitHub issues) and a `LICENSE` file
+
 ### 2026-08-23
 
-- **Added**: Initial README for the script folder
-- **Changed**: Script moved from `archive/private/scripts/` into its own `autoTabCloser/` folder
+- **Added** (script v1.8): Auto-update via `@updateURL`/`@downloadURL`
 - **Added** (script v1.7): Sync tab — settings backup to a secret GitHub Gist via one-click OAuth device flow (auto-push on save, pull on open, last-writer-wins)
 
 For the full per-version script history, see the Credits tab inside the settings dialog.

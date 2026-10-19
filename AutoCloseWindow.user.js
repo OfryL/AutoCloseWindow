@@ -1,17 +1,18 @@
 // ==UserScript==
 // @name         Auto Close Window
-// @version      1.8
+// @version      1.9
 // @description  Automatically close browser windows/tabs when specific text patterns are detected. Useful for OAuth callbacks, AWS SSO, and temporary pages.
 // @namespace    https://github.com/ofryl/userscripts
 // @author       Ofry Linkovsky <ofryl@gmail.com>
 // @license      MIT
-// @homepageURL  https://gist.github.com/OfryL/33724afe78158fa54418a626c7c01b4e
-// @updateURL    https://gist.githubusercontent.com/OfryL/33724afe78158fa54418a626c7c01b4e/raw/AutoCloseWindow.user.js
-// @downloadURL  https://gist.githubusercontent.com/OfryL/33724afe78158fa54418a626c7c01b4e/raw/AutoCloseWindow.user.js
+// @homepageURL  https://github.com/OfryL/AutoCloseWindow
+// @supportURL   https://github.com/OfryL/AutoCloseWindow/issues
+// @updateURL    https://raw.githubusercontent.com/OfryL/AutoCloseWindow/main/AutoCloseWindow.user.js
+// @downloadURL  https://raw.githubusercontent.com/OfryL/AutoCloseWindow/main/AutoCloseWindow.user.js
 // @icon         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0Q0FGNTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwb2x5bGluZSBwb2ludHM9IjEyIDYgMTIgMTIgMTYgMTQiLz48L3N2Zz4=
 // @match        *://*/*
-// @exclude      https://gist.github.com/OfryL/33724afe78158fa54418a626c7c01b4e*
-// @exclude      https://gist.githubusercontent.com/OfryL/33724afe78158fa54418a626c7c01b4e/*
+// @exclude      https://github.com/OfryL/AutoCloseWindow*
+// @exclude      https://raw.githubusercontent.com/OfryL/AutoCloseWindow/*
 // @run-at       document-start
 // @noframes
 // @grant        window.close
@@ -1261,7 +1262,7 @@
           return `
             <div id="tab-content-credits" style="${s.content}display:none;">
               <div style="width:100%;">
-                <h3 style="margin-top:0;">Auto Close Window v1.8</h3>
+                <h3 style="margin-top:0;">Auto Close Window v1.9</h3>
                 <p style="${s.textMuted}line-height:1.6;">
                   Automatically closes browser windows/tabs when specific text patterns are detected on the page.
                   Useful for closing OAuth callbacks, AWS SSO windows, and other temporary pages.
@@ -1270,6 +1271,10 @@
                 <p style="${s.textMuted}">
                   Ofry Linkovsky<br>
                   <a href="mailto:ofryl@gmail.com" style="${s.link}">ofryl@gmail.com</a>
+                </p>
+                <h4>Source</h4>
+                <p style="${s.textMuted}">
+                  <a href="https://github.com/OfryL/AutoCloseWindow" target="_blank" style="${s.link}">github.com/OfryL/AutoCloseWindow</a>
                 </p>
                 <h4>Requirements</h4>
                 <p style="${s.textMuted}line-height:1.6;">
@@ -1280,6 +1285,7 @@
                 <p style="${s.textMuted}">MIT License</p>
                 <h4>Changelog</h4>
                 <ul style="${s.textMuted}line-height:1.8;padding-left:20px;">
+                  <li><strong>v1.9</strong> - Moved from the gist to the OfryL/AutoCloseWindow GitHub repository; @updateURL/@downloadURL now point at the repo</li>
                   <li><strong>v1.8</strong> - Added auto-update from the public gist via @updateURL/@downloadURL</li>
                   <li><strong>v1.7</strong> - Added Sync tab: settings backup to a secret GitHub Gist via one-click OAuth device flow (auto-push on save, pull on open)</li>
                   <li><strong>v1.6</strong> - Refactored: centralized element IDs in Enum, extracted pageHeader style, added AUTOSAVE_DEBOUNCE_MS constant</li>
